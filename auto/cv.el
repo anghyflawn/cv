@@ -1,5 +1,7 @@
 (TeX-add-style-hook "cv"
  (lambda ()
+    (LaTeX-add-labels
+     "sec:edited-volumes")
     (TeX-add-symbols
      '("yearblock" ["argument"] 1)
      '("block" 2)
@@ -11,9 +13,10 @@
      "calc"
      "titlesec"
      "xcolor"
-     "usenames"
      "dvipsnames"
+     "usenames"
      "csquotes"
+     "english=british"
      "autostyle"
      "polyglossia"
      "etex"
@@ -21,11 +24,12 @@
      "color"
      "parskip"
      "xltxtra"
+     ""
      "typearea"
      "DIV13"
      "latex2e"
      "art11"
      "article"
-     "a4paper"
-     "11pt")))
+     "11pt"
+     "a4paper")))
 
