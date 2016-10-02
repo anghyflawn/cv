@@ -3,3 +3,4 @@
 *.log
 *.out
 *.el
+/cv.synctex.gz
