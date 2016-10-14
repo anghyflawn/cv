@@ -2,20 +2,20 @@
  "cv"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("article" "a4paper" "11pt")))
+                     '(("article" "a4paper" "12pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("typearea" "DIV13") ("csquotes" "autostyle" "english=british") ("xcolor" "usenames" "dvipsnames")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+                     '(("typearea" "DIV12") ("csquotes" "autostyle" "english=british") ("xcolor" "usenames" "dvipsnames")))
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
     "article"
-    "art11"
+    "art12"
     "typearea"
     "xltxtra"
     "parskip"
@@ -32,8 +32,10 @@
     "hyperref")
    (TeX-add-symbols
     '("yearblock" ["argument"] 1)
+    '("doi" 1)
     '("block" 2)
-    '("cvitem" 1))
+    '("cvitem" 1)
+    '("textitrussian" 1))
    (LaTeX-add-labels
     "sec:books"
     "sec:edited-volumes"
@@ -42,6 +44,7 @@
    (LaTeX-add-lengths
     "blockwidth")
    (LaTeX-add-polyglossia-langs
-    '("english" "mainlanguage" "variant=british")))
+    '("english" "mainlanguage" "variant=british")
+    '("russian" "otherlanguage" "")))
  :latex)
 
