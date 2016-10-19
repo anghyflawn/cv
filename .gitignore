@@ -4,3 +4,4 @@
 *.out
 *.el
 /cv.synctex.gz
+*.tex#
