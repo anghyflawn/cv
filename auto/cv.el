@@ -2,7 +2,7 @@
  "cv"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("article" "a4paper" "12pt")))
+                     '(("article" "a4paper" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("typearea" "DIV12") ("csquotes" "autostyle" "english=british") ("xcolor" "usenames" "dvipsnames")))
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
@@ -15,7 +15,7 @@
    (TeX-run-style-hooks
     "latex2e"
     "article"
-    "art12"
+    "art11"
     "typearea"
     "xltxtra"
     "parskip"
