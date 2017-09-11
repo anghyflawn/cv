@@ -17,7 +17,7 @@
     "article"
     "art11"
     "typearea"
-    "xltxtra"
+    "luatextra"
     "parskip"
     "color"
     "graphicx"
@@ -43,6 +43,8 @@
     "sec:phd-supervision")
    (LaTeX-add-lengths
     "blockwidth")
+   (LaTeX-add-fontspec-newfontcmds
+    "russianfont")
    (LaTeX-add-polyglossia-langs
     '("english" "mainlanguage" "variant=british")
     '("russian" "otherlanguage" "")))
