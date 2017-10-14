@@ -1,12 +1,11 @@
 \documentclass[a4paper,11pt]{article}
-\usepackage[DIV12]{typearea}
+\usepackage[DIV11]{typearea}
 \usepackage{luatextra}
 \usepackage{parskip}
 \usepackage{color,graphicx}
 \usepackage{etex}
-\usepackage{polyglossia}
-\setmainlanguage[variant=british]{english}
-\usepackage[autostyle,english=british]{csquotes}
+\usepackage[main=british, russian]{babel}
+\usepackage[autostyle]{csquotes}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{titlesec}
 \usepackage{calc}
@@ -15,9 +14,6 @@
 \usepackage{hyperref}
 \hypersetup{colorlinks,breaklinks,urlcolor=blue,linkcolor=blue,pdftitle={Pavel Iosad CV}}
 
-\usepackage{polyglossia}
-\setmainlanguage[variant=british]{english}
-\setotherlanguage{russian}
 
 \newlength\blockwidth
 \setlength\blockwidth{3em}
@@ -26,9 +22,8 @@
 
 % FONTS
 \setmainfont[Ligatures=TeX]{Old Standard}
-\newfontfamily\russianfont{Old Standard}
-
-\newcommand\textitrussian[1]{\textrussian{\textit{#1}}}
+\newcommand\textrussian[1]{\foreignlanguage{russian}{#1}}
+\newcommand\textitrussian[1]{\foreignlanguage{russian}{\textit{#1}}}
 \titleformat{\section}{\Large\fontspec[Weight=Bold]{Arimo}\raggedright}{}{0em}{}[\titlerule]
 \titleformat{\subsection}{\large\fontspec{Arimo}\raggedright}{}{0em}{}
 \titleformat{\subsubsection}{\large}{}{0em}{}
@@ -109,7 +104,8 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{D
 
 \subsection*{Articles in edited volumes}
 
-\yearblock[Submitted]{The ATR/Laryngeal connection and emergent features. In Bert Botma and Marc van Oostendorp (eds.), \textit{Primitives of phonological structure} (Oxford Studies in Phonology and Phonetics). Oxford: Oxford University Press.}
+\yearblock[Submitted]{Phonology in the Soviet Union. In B.~Elan Dresher and Harry van der Hulst (eds.), \textit{The Oxford history of phonology}. Oxford: Oxford University Press.}
+\yearblock{The ATR/Laryngeal connection and emergent features. In Bert Botma and Marc van Oostendorp (eds.), \textit{Primitives of phonological structure} (Oxford Studies in Phonology and Phonetics). Oxford: Oxford University Press.}
 \yearblock[Forthcoming]{Optimality Theory: Motivations and perspectives. In Anna Bosch and S.~J.~Hannahs (eds.), \textit{The Routledge handbook of phonology}. London, New York: Routledge}
 \yearblock[2016]{Tonal stability and tonogenesis in North Germanic. In Ian Giles, Laura Chapot, Chris Cooijmans, Ryan Foster, and Barbara Tesio (eds.), \textit{Beyond Borealism: New perspectives on the North}, 80--98. London: Norvik Press}
 \yearblock[2015]{\enquote{Pitch accent} and prosodic structure in Scottish Gaelic: Reassessing the role of contact. In  Martin Hilpert, Jan-Ola Östman, Christine Mertzlufft, Michael Rießler, and Janet Duke (eds.), \emph{New trends in Nordic and general linguistics}, 28--54. Berlin: Mouton De Gruyter. \doi{10.1515/9783110346978.28}}
@@ -139,6 +135,8 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{D
 
 \section{Presentations}
 
+\yearblock[To be presented]{(Poster presentation) \textit{Towards a history of the tenseness contrast in Brythonic vowels}. The Third Edinburgh Symposium on Historical Phonology, University of Edinburgh, Edinburgh, UK.}
+\yearblock{\textit{Pre-sonorant voicing and language contact}. The Third Edinburgh Symposium on Historical Phonology: Laryngeal Fringe Session, University of Edinburgh, Edinburgh, UK.}
 \yearblock[2017]{\textit{Bridging the gap: Tenseness and length in Brythonic vowels}. New Approaches to Brythonic Historical Linguistics, Dublin Institute for Advanced Studies, Dublin, Republic of Ireland.}
 \yearblock{\textit{Microvariation in laryngeal realism: Preaspiration in North Germanic}. 25th Manchester Phonology Meeting, University of Manchester, Manchester, UK.}
 \yearblock{\textit{Variation in North Germanic preaspiration}. Fonologi i Norden, University of Agder, Kristiansand, Norway.}
