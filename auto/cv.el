@@ -5,12 +5,12 @@
                      '(("article" "a4paper" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("typearea" "DIV11") ("babel" "main=british" "russian") ("csquotes" "autostyle") ("xcolor" "usenames" "dvipsnames")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -36,13 +36,16 @@
     '("block" 2)
     '("cvitem" 1)
     '("textitrussian" 1)
-    '("textrussian" 1))
+    '("textrussian" 1)
+    "ipa")
    (LaTeX-add-labels
     "sec:books"
     "sec:edited-volumes"
     "sec:misc-publ"
     "sec:phd-supervision")
    (LaTeX-add-lengths
-    "blockwidth"))
+    "blockwidth")
+   (LaTeX-add-fontspec-newfontcmds
+    "ipafont"))
  :latex)
 
