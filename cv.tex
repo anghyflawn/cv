@@ -1,6 +1,5 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage[DIV=11]{typearea}
-\usepackage{luatextra}
 \usepackage{parskip}
 \usepackage{color,graphicx}
 \usepackage{etex}
@@ -13,8 +12,7 @@
 \usepackage{etoolbox}
 \usepackage{hyperref}
 \hypersetup{colorlinks,breaklinks,urlcolor=blue,linkcolor=blue,pdftitle={Pavel Iosad CV}}
-\newfontfamily\ipafont[Scale=MatchLowercase]{EB Garamond}
-\DeclareTextFontCommand{\ipa}{\ipafont}
+
 
 \newlength\blockwidth
 \setlength\blockwidth{3em}
@@ -22,11 +20,29 @@
 \setlength\columnsep{30pt}
 
 % FONTS
-\setmainfont[Ligatures=TeX]{Old Standard}
+\usepackage{ifluatex}
+\ifluatex
+\usepackage{luatextra}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Old Standard}
+\setsansfont{Arimo}
+\newfontfamily\ipafont[Scale=MatchLowercase]{EB Garamond}
+\DeclareTextFontCommand{\ipa}{\ipafont}
+\else
+\usepackage[utf8]{inputenc}
+\usepackage[T2A,T1]{fontenc}
+\usepackage{tipa}
+\usepackage{literat}
+\usepackage[defaultsans]{cantarell}
+\newcommand\ipa[1]{\textipa{#1}}
+\usepackage{newunicodechar}
+\newunicodechar{ɨ}{1}
+\fi
+
+\titleformat{\section}{\Large\sffamily\bfseries\raggedright}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\large\sffamily\raggedright}{}{0em}{}
 \newcommand\textrussian[1]{\foreignlanguage{russian}{#1}}
 \newcommand\textitrussian[1]{\foreignlanguage{russian}{\textit{#1}}}
-\titleformat{\section}{\Large\fontspec[Weight=Bold]{Arimo}\raggedright}{}{0em}{}[\titlerule]
-\titleformat{\subsection}{\large\fontspec{Arimo}\raggedright}{}{0em}{}
 \titleformat{\subsubsection}{\large}{}{0em}{}
 \titlespacing{\section}{0pt}{3pt}{0pt}
 \titlespacing{\subsection}{0pt}{0pt}{0pt}
@@ -123,6 +139,7 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{D
 \subsection*{Miscellaneous publications}
 \label{sec:misc-publ}
 
+\yearblock[2018]{(with Maria Koptjevskaja-Tamm, Dmitri Sitchinava, and Alexander Piperski) \textit{Depth, brilliance, clarity: Andrey Anatolyevich Zaliznyak (1935–2017)} [Obituary]. \textit{Linguistic Typology} 22(1). 175--184. \doi{10.1515/lingty-2018-0006}}
 \yearblock[2017]{\textit{Celtic mutations}. In Mark Aronoff (ed.), \textit{Oxford Bibliographies Online}. New York: Oxford University Press. \doi{10.1093/OBO/9780199772810-0146}} 
 
 \subsection*{Book reviews}
@@ -134,7 +151,7 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{D
 
 \subsection*{Encyclopædic articles}
 \yearblock[Various years]{Articles for \textitrussian{Большая российская энциклопедия}:\\
-\textitrussian{Вакашские языки} (Wakashan languages), \textitrussian{Ирландский язык} (Irish [Gaelic]), \textitrussian{Идома} (Idoma), \textitrussian{Йоруба} (Yoruba), \textitrussian{Иджоидные языки} (Ijoid languages), \textitrussian{Ирокезские языки} (Iroquois languages), \textitrussian{Кельтские языки} (Celtic languages), \textitrussian{Корнский язык} (Cornish)}
+\textitrussian{\href{https://bigenc.ru/linguistics/text/1894577}{Вакашские языки}} (Wakashan languages), \textitrussian{\href{https://bigenc.ru/linguistics/text/2021373}{Ирландский язык}} (Irish language), \textitrussian{\href{https://bigenc.ru/linguistics/text/2000498}{Идома}} (Idoma language), \textitrussian{\href{https://bigenc.ru/linguistics/text/2029765}{Йоруба}} (Yoruba language), \textitrussian{\href{https://bigenc.ru/linguistics/text/2000308}{Иджоидные языки}} (Ijoid languages), \textitrussian{\href{https://bigenc.ru/linguistics/text/2021535}{Ирокезские языки}} (Iroquois languages), \textitrussian{\href{https://bigenc.ru/linguistics/text/2059710}{Кельтские языки}} (Celtic languages), \textitrussian{\href{https://bigenc.ru/linguistics/text/2098609}{Корнский язык}} (Cornish language)}
 
 \section{Presentations}
 
@@ -320,5 +337,5 @@ The Edinburgh Symposium on Historical Phonology (local organizer)\\
 \end{document}
 
 % Local Variables:
-% TeX-engine: luatex
+% TeX-engine: default
 % End:
