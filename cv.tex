@@ -1,5 +1,5 @@
 \documentclass[a4paper,11pt]{article}
-\usepackage[DIV=11]{typearea}
+\usepackage[margin=2.54cm,left=5cm, marginparwidth=4.6cm, marginparsep=3mm, heightrounded]{geometry}
 \usepackage{parskip}
 \usepackage{color,graphicx}
 \usepackage{etex}
@@ -25,7 +25,8 @@
 \usepackage{luatextra}
 \defaultfontfeatures{Ligatures=TeX}
 \setmainfont{Old Standard}
-\setsansfont{Arimo}
+\setsansfont[Scale=MatchLowercase]{Arimo}
+\setmonofont[Scale=MatchLowercase]{Iosevka}
 \newfontfamily\ipafont[Scale=MatchLowercase]{EB Garamond}
 \DeclareTextFontCommand{\ipa}{\ipafont}
 \else
@@ -48,15 +49,24 @@
 \titlespacing{\subsection}{0pt}{0pt}{0pt}
 \titlespacing{\subsubsection}{0pt}{0pt}{0pt}
 
-\newcommand\cvitem[1]{\hspace*{\blockwidth}\begin{minipage}[t]{\linewidth-\blockwidth}
-#1
-\end{minipage}\par}
+% \newcommand\cvitem[1]{\hspace*{\blockwidth}\begin{minipage}[t]{\linewidth-\blockwidth}
+% #1
+% \end{minipage}\par}
 
-\newcommand{\block}[2]{\subsubsection{#1}\cvitem{#2}}
-\newcommand{\yearblock}[2][]{\ifblank{#1}{\cvitem{\parindent-1.5em #2}}{\block{#1}{\parindent-1.5em #2}}}
+% \newcommand{\block}[2]{\subsubsection{#1}\cvitem{#2}}
+% \newcommand{\yearblock}[2][]{\ifblank{#1}{\cvitem{\parindent-1.5em #2}}{\block{#1}{\parindent-1.5em #2}}}
+
+\newcommand\cvitem[1]{#1\par}
+
+\newcommand{\block}[2]{\hspace{0pt}\marginpar{\plmarginyear{#1}}\cvitem{#2}}
+\newcommand{\yearblock}[2][]{\ifblank{#1}{\cvitem{#2}}{\block{#1}{#2}}}
+
+
 \newcommand\doi[1]{\href{http://dx.doi.org/#1}{doi: #1}}
 
-
+\newcommand*{\publistbasestyle}{biblatex-langsci-unified}
+\usepackage[bibstyle=publist, marginyear=true, plnumbered=false, boldyear=false, date=year, maxbibnames=50, autolang=hyphen, sorting=ddnt]{biblatex}
+\plauthorname[Pavel]{Iosad}
 \begin{document}
 \thispagestyle{plain}
 {\Huge Pavel Iosad}\\[\baselineskip]
@@ -104,43 +114,30 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{D
 \section{Publications}
 
 \subsection*{Books}
-\label{sec:books}
-
-\yearblock[2017]{A substance-free framework for phonology: An analysis of the Breton dialect of Bothoa (Edinburgh Studies in Theoretical Linguistics 2). Edinburgh: Edinburgh University Press.}
+\newrefsection[books]
+\nocite{*}
+\printbibliography[heading=none]
 
 \subsection*{Journal articles}
-\yearblock[2017]{Welsh svarabhakti as stem allomorphy. \emph{Transactions of the Philological Society} 115(2), 141--175. \doi{10.1111/1467-968X.12085}}
-\yearblock{The phonologization of redundancy: Length and quality in Welsh vowels. \textit{Phonology} 34(1), 121--162. \doi{10.1017/S0952675717000057}}
-\yearblock[2016]{Rule scattering and vowel length in Northern Romance. \emph{Papers in Historical Phonology} 1, 218--237. \doi{10.2218/pihph.1.2016.1700}}
-\yearblock{Prosodic structure and suprasegmental features: Short-vowel stød in Danish. \emph{Journal of Comparative Germanic Linguistics} 19(3), 221--268. \doi{10.1007/s10828-016-9083-8}}
-\yearblock[2014]{The phonology and morphosyntax of mutation in Breton. \emph{Lingue e Linguaggio} 13(1), 23--42. \doi{10.1418/76998}}
-\yearblock[2012]{Vowel reduction in Russian: no phonetics in phonology. \emph{Journal of Linguistics} 48(3), 521--571. \doi{10.1017/S0022226712000102}}
-\yearblock{A representational approach to final devoicing and vowel lengthening in Friulian. \emph{Lingua} 122(8), 922--951. \doi{10.1016/j.lingua.2012.03.004}}
-\yearblock[2008]{\textrussian{Теория оптимальности: обзор основной литературы.} In Russian: \enquote{Optimality Theory. A survey of the principal literature}. \textit{Voprosy jazykoznanija} 2008/4, 104--121. \href{http://issuesinlinguistics.ru/pubfiles/2008-4_104-121.pdf}{Link}}
+\newrefsection[journal-articles]
+\nocite{*}
+\printbibliography[heading=none]
+
+\subsection*{Papers in edited collections}
+\newrefsection[chapters]
+\nocite{*}
+\printbibliography[heading=none]
+
+\subsection*{Books edited}
+\newrefsection[edited-books]
+\nocite{*}
+\printbibliography[heading=none, notkeyword=future]
 
 
-\subsection*{Articles in edited volumes}
-
-\yearblock[Submitted]{Phonology in the Soviet Union. In B.~Elan Dresher and Harry van der Hulst (eds.), \textit{The Oxford history of phonology}. Oxford: Oxford University Press.}
-\yearblock{The ATR/Laryngeal connection and emergent features. In Bert Botma and Marc van Oostendorp (eds.), \textit{Primitives of phonological structure} (Oxford Studies in Phonology and Phonetics). Oxford: Oxford University Press.}
-\yearblock[2018]{Optimality Theory: Motivations and perspectives. In S.~J.~Hannahs and Anna R.~K.~Bosch (eds.), \textit{The Routledge handbook of phonological theory}, 13--36. London, New York: Routledge}
-\yearblock[2016]{Tonal stability and tonogenesis in North Germanic. In Ian Giles, Laura Chapot, Chris Cooijmans, Ryan Foster, and Barbara Tesio (eds.), \textit{Beyond Borealism: New perspectives on the North}, 80--98. London: Norvik Press}
-\yearblock[2015]{\enquote{Pitch accent} and prosodic structure in Scottish Gaelic: Reassessing the role of contact. In  Martin Hilpert, Jan-Ola Östman, Christine Mertzlufft, Michael Rießler, and Janet Duke (eds.), \emph{New trends in Nordic and general linguistics}, 28--54. Berlin: Mouton De Gruyter. \doi{10.1515/9783110346978.28}}
-\yearblock[2013]{(with Catrin S.~Rhys and Alison Henry) Introduction. In Catrin S.~Rhys, Pavel Iosad and Alison Henry (eds.) \textit{Minority languages, microvariation, minimalism and meaning: Proceedings of the Irish Network in Formal Linguistics}, x--xiv. Newcastle upon Tyne: Cambridge Scholars Publishing.}
-\yearblock{\textit{Head-dependent asymmetries in Munster Irish prosody}. In \emph{Nordlyd} 40(1), Special XL Issue: A Festschrift on the occasion of X years of CASTL phonology and Curt Rice's Lth birthday, eds Sylvia Blaho, Martin Krämer and Bruce Morén-Duolljá, 66--107. \doi{10.7557/12.2502}}
-\yearblock[2010]{\textit{Right at the left edge: initial consonant  mutations in the world's languages}. In Michael Cysouw and Jan Wohlgemuth  (eds.) \textit{Rethinking universals: How rarities affect linguistic theory} (Empirical Approaches  to Language Typology 45), 105--138. Berlin: Mouton de~Gruyter. \doi{10.1515/9783110220933.105}}
-\yearblock{\textitrussian{Касситский язык} [Cassite]. In N.~N.~Kazanskij, A.~A.~Kibrik and Yu.~B.~Koryakov (eds) \textitrussian{Языки мира: Древние и реликтовые языки Передней Азии} [Languages of the world. Ancient relic languages of the Middle East]. Moscow: Academia (RAS Institute of Linguistics). Pp. 184–187. (In Russian.)}
-
-\subsection*{Edited volumes}
-\label{sec:edited-volumes}
-
-\yearblock[2013]{(with Catrin S.~Rhys and Alison Henry) \textit{Minority languages, microvariation, minimalism and meaning: Proceedings of the Irish Network in Formal Linguistics}. Newcastle upon Tyne: Cambridge Scholars Publishing.}
-
-\subsection*{Miscellaneous publications}
-\label{sec:misc-publ}
-
-\yearblock[2018]{(with Maria Koptjevskaja-Tamm, Dmitri Sitchinava, and Alexander Piperski) \textit{Depth, brilliance, clarity: Andrey Anatolyevich Zaliznyak (1935–2017)} [Obituary]. \textit{Linguistic Typology} 22(1). 175--184. \doi{10.1515/lingty-2018-0006}}
-\yearblock[2017]{\textit{Celtic mutations}. In Mark Aronoff (ed.), \textit{Oxford Bibliographies Online}. New York: Oxford University Press. \doi{10.1093/OBO/9780199772810-0146}} 
+\subsection*{Miscellaneous}
+\newrefsection[misc]
+\nocite{*}
+\printbibliography[heading=none]
 
 \subsection*{Book reviews}
 \yearblock[2018]{Pater, Joe and John J.~McCarthy (eds.). 2016. \textit{Harmonic Grammar and Harmonic Serialism}. London: Continuum. \emph{Voprosy jazykoznanija}, 2018/1, 138--147.}
@@ -154,81 +151,9 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{D
 \textitrussian{\href{https://bigenc.ru/linguistics/text/1894577}{Вакашские языки}} (Wakashan languages), \textitrussian{\href{https://bigenc.ru/linguistics/text/2021373}{Ирландский язык}} (Irish language), \textitrussian{\href{https://bigenc.ru/linguistics/text/2000498}{Идома}} (Idoma language), \textitrussian{\href{https://bigenc.ru/linguistics/text/2029765}{Йоруба}} (Yoruba language), \textitrussian{\href{https://bigenc.ru/linguistics/text/2000308}{Иджоидные языки}} (Ijoid languages), \textitrussian{\href{https://bigenc.ru/linguistics/text/2021535}{Ирокезские языки}} (Iroquois languages), \textitrussian{\href{https://bigenc.ru/linguistics/text/2059710}{Кельтские языки}} (Celtic languages), \textitrussian{\href{https://bigenc.ru/linguistics/text/2098609}{Корнский язык}} (Cornish language)}
 
 \section{Presentations}
-
-\yearblock[2018]{(with Warren Maguire) \emph{English epenthesis in \emph{lC} and \emph{rC} clusters: Areal effect or drift?} 20th International Conference on English Historical Linguistics (ICEHL XX), University of Edinburgh, Edinburgh, UK.}
-\yearblock{\textit{A metrical analysis of Scottish Gaelic tonal accent}. Rannsachadh na Gàidhlig 2018, University of Edinburgh, Edinburgh, UK.}
-\yearblock{\textit{The influence of Norse on Scottish Gaelic, 85 years on.} Forum for Research on the Languages of Scotland and Ulster, University of Glasgow, Glasgow, UK.}
-\yearblock{\textit{There is no problem of /v/ in Russian phonology.} 26th Manchester Phonology Meeting, University of Manchester, Manchester, UK.}
-\yearblock{\textit{Norwegian preaspiration in traditional and modern sources.} 13th Forum for Germanic Language Studies, University of Edinburgh, Edinburgh, UK.}
-\yearblock[2017]{(Poster presentation) \textit{Towards a history of the tenseness contrast in Brythonic vowels}. The Third Edinburgh Symposium on Historical Phonology, University of Edinburgh, Edinburgh, UK.}
-\yearblock{\textit{Pre-sonorant voicing, laryngeal realism, and language contact}. The Third Edinburgh Symposium on Historical Phonology: Laryngeal Fringe Session, University of Edinburgh, Edinburgh, UK.}
-\yearblock{\textit{Bridging the gap: Tenseness and length in Brythonic vowels}. New Approaches to Brythonic Historical Linguistics, Dublin Institute for Advanced Studies, Dublin, Republic of Ireland.}
-\yearblock{\textit{Microvariation in laryngeal realism: Preaspiration in North Germanic}. 25th Manchester Phonology Meeting, University of Manchester, Manchester, UK.}
-\yearblock{\textit{Variation in North Germanic preaspiration}. Fonologi i Norden, University of Agder, Kristiansand, Norway.}
-\yearblock[2016]{(with Máire Ní Chiosáin) \textit{Making sense of consonant palatalization and vowel backness in Irish}. Language Documentation and Linguistic Theory 5, SOAS University of London, London, UK.}
-\yearblock{(with Máire Ní Chiosáin) \textit{Short vowel allophones in Modern Irish}. Tionól 2016, Dublin Institute for Advanced Studies, Dublin, Republic of Ireland.}
-\yearblock{\textit{The northwest European phonological area: New approaches to an old problem}. Linguistic Circle, University of Edinburgh, Edinburgh, Scotland.}
-\yearblock{(with Máire Ní Chiosáin) \textit{Problems of phonemicization: Irish short vowels revisited}. 9th Celtic Linguistics Conference, Cardiff University, Cardiff, Wales.}
-\yearblock{(with Will Lamb) \textit{Morphology and dialectology in the Linguistic Survey of Scotland: A quantitative approach}. Rannsachadh na Gàidhlig 2016, Sabhal Mòr Ostaig, Sleat, Scotland.}
-\yearblock{(with Remco Knooihuizen) \textit{Vowel length in Shetland Norn: Contact, change, and competing systems}. AMC Symposium on Historical Dialectology, The University of Edinburgh, Edinburgh, Scotland.}
-\yearblock{\textit{The northwest European linguistic area: New approaches to an old problem}. Local talk, UiT The Arctic University of Norway, Tromsø, Norway.}
-\yearblock{(with Máire Ní Chiosáin) \textit{Backness in Irish and Scottish Gaelic short vowels: Phonology and/or coarticulation}. Fonologi i Skandinavien, University of Gothenburg, Gothenburg, Sweden.}
-\yearblock{(with Máire Ní Chiosáin) \textit{Vowel backness and palatalization in Irish and Scottish Gaelic: A study in rule scattering}. 13th Old World Conference in Phonology, Eötvös Loránd University and Research Institute in Linguistics, Hungarian Academy of Sciences, Budapest, Hungary.}
-\yearblock[2015]{(with Bert Botma and Hidetoshi Shirashi) \textit{Phonetic (non-)explanations in historical phonology: Duration, harmony and dissimilation}. The Second Edinburgh Symposium on Historical Phonology, The University of Edinburgh, Edinburgh, Scotland.}
-\yearblock{(with Michael Ramsammy and Patrick Honeybone) \textit{Preaspiration in North Argyll Gaelic and its contribution to prosodic structure.} Forum for Research on the Languages of Scotland and Ulster, University of the West of Scotland, Ayr, Scotland.}
-\yearblock{\textit{Preaspiration and tonal accents as Northern Gaelic features: Reconsidering contact origins}. 15th International Congress of Celtic Studies, University of Glasgow, Glasgow, Scotland.}
-\yearblock{\textit{Free and not so free: Dialect variation and quantity-quality interactions in Welsh vowels}. 22nd Welsh Linguistics Seminar, Plas Gregynog, Wales.}
-\yearblock{\textit{Quantity-quality interactions in Welsh vowels: Phonologization across dialects}. 23rd Manchester Phonology Meeting, University of Manchester, Manchester, UK.}
-\yearblock{\textit{An echoing tone: Pitch accent parallels in Scandinavia and Scotland}. Nordic Research Network, The University of Edinburgh, Edinburgh, Scotland.}
-\yearblock[2014]{\textit{Length and tenseness across Welsh dialects}. Amrywiaeth Ieithyddol yng Nghymru~/ Language Diversity in Wales, National Library of Wales, Aberystwyth, Wales.}
-\yearblock{\textit{Stress and consonant length in Welsh revisited}. 21st Welsh Linguistics Seminar, Plas Gregynog, Wales.}
-\yearblock{\textit{\textrussian{Ареальные схождения в фонологии языков Северной Европы: языковые контакты или типология?}}. In Russian: \enquote{Areal similarities in the phonologies of Northern European languages: language contact or typology?} Invited talk, Phonology Seminar, Moscow State University, Moscow, Russia.}
-\yearblock{\textit{Phonologization of redundant contrasts and the Contrastivist Hypothesis}. 8th North American Phonology Conference, Concordia University, Montréal, Canada.}
-\yearblock{\textit{The [ATR]/laryngeal connection and emergent features}. GLOW Workshop on Phonological Specification and Interface Interpretation, KU Leuven HUBrussel, Brussels, Belgium.}
-\yearblock{\textit{\emph{Nordeuropäische Lautgeographie} revisited: the view from theoretical phonology}. Invited talk, University of Manchester, Manchester, UK.}
-\yearblock{(Poster presentation) \textit{Connecting the dots: phonologization of redundant tenseness across Welsh dialects}. Symposium on Historical Phonology, The University of Edinburgh, Edinburgh, Scotland}
-\yearblock[2013]{\textit{In search of lost phonology: svarabhakti, metathesis, and stem allomorphy in South Welsh}. Invited talk, Newcastle University, Newcastle upon Tyne, UK.}
-\yearblock{(with Patrick Honeybone) \textit{Phonemicization vs.\@ phonologization: voiced fricatives in Old English and Brythonic.} 2013 Annual Meeting of the Linguistics Association of Great Britain, School of Oriental and African Studies, London, UK.}
-\yearblock{\textit{Non-contrastive epenthetic segments as surface prosodic structure.} 21st Manchester Phonology Meeting, University of Manchester, Manchester, UK}
-\yearblock{\textit{Glottal stop insertion in Scottish Gaelic and contrastive syllabification.} Teangeolaíocht na Gaeilge / Cànanachas na Gàidhlig / The Linguistics of the Gaelic Languages XV, University College Dublin, Dublin, Republic of Ireland}
-\yearblock[2012]{\textit{The phonological endgame: Welsh svarabhakti revisited.} New Researchers Forum in Linguistics, University of Manchester and University of Salford, Manchester, UK}
-\yearblock{\textit{Phonetic realization is irrelevant for phonological representation: the case of Celtic laryngeal phonology.} Research Seminar in Language and Linguistics, University of Ulster, Jordanstown, Northern Ireland.}
-\yearblock{\textit{In defence of Richness of the Base: context-free weight in Welsh.} CASTL Decennium Conference, University of Tromsø/CASTL, Tromsø, Norway.}
-\yearblock{\textit{A unified account of the behaviour of high vowels in Bothoa Breton.} 7th Celtic Linguistics Conference, University of Rennes II, Rennes, France.}
-\yearblock{\textit{Deconstructing mutation in Breton}. Workshop on the Selection and Representation of Morphological Exponents, University of Tromsø/CASTL, Tromsø, Norway.}
-\yearblock{\textit{Laryngeal realism revisited: voicelessness in Breton}. 20th Manchester Phonology Meeting, University of Manchester, Manchester, UK.}
-\yearblock{\textit{\enquote{Pitch accent} and prosodic structure in Scottish Gaelic: historical implications.} 11th International Conference of Nordic and General Linguistics, University of Freiburg, Freiburg, Germany.}
-\yearblock[2011]{\textit{Explaining licensing mismatches in Welsh}. Old World Conference in Phonology 8, Marrakech, Morocco.}
-\yearblock{\textit{On (some) dimensions of headship in phonology}. The PJ Workshop, University of Tromsø/CASTL, Tromsø, Norway.}
-\yearblock[2010]{\textit{Final devoicing and vowel lengthening in the north of Italy: a representational approach}. Going Romance 24, Leiden University, Leiden, Netherlands.}
-\yearblock{\textit{A bad case of excessive computation: the r\^ole of morphology in palatalization-related alternations in Russian}. Workshop on Morphosyntax\,--\,Phonology Interface Theories, Leiden University, Leiden, Netherlands. (Invited.)}
-\yearblock{\textit{How good is the internal evidence for multiple-level phonological computation? A view from Russian}. \enquote{What's in a word? Exploring the relationship between syntax and phonology}, University of Tromsø/CASTL, Tromsø, Norway.}
-\yearblock{\textit{Incomplete neutralization and unorthodox markedness in Breton laryngeal phonology}. 6th Celtic Linguistics Conference, University College Dublin, Dublin, Republic of Ireland}
-\yearblock{\textit{Feature geometry meets contrastive specification: incomplete neutralization reloaded}. 18th Manchester Phonology Meeting, University of Manchester, Manchester, UK}
-\yearblock{\textit{A good old-fashioned approach to Russian palatalization}. Invited talk, University of Oslo, Oslo, Norway.}
-\yearblock{(with Bruce Morén-Duolljá) \textit{Russian palatalization: the true(r) story}. Old World Conference in Phonology 7, University of Nice, Nice, France}
-\yearblock{(Poster presentation) \textit{Structure versus prominence: evidence from Munster Irish}. Old World Conference in Phonology 7, University of Nice, Nice, France}
-\yearblock[2009]{(with Bruce Morén-Duolljá) \textit{Russian (morpho)phonological palatalization: a holistic approach}. Formal Description of Slavic Languages 8, University of Potsdam, Potsdam, Germany}
-\yearblock{\textit{Cuique suum: vowel reduction in Russian}. Formal Description of Slavic Languages 8, University of Potsdam, Potsdam, Germany}
-\yearblock{\textit{Tre problemer i russisk fonologi: vokaler, palatalisering og niv\aa er}. In Norwegian: \enquote{Three problems in Russian phonology: vowels, palatalization, and levels}. Novemberseminaret i russisk, University of Tromsø, Tromsø, Norway}
-\yearblock{\textit{Russian palatalization in substance-free  phonology}. CASTL Colloquium series, University of Tromsø, Tromsø, Norway}
-\yearblock{\textit{Sandhi, mutation, and contrast: laryngeal phonology in Plougrescant Breton}. Toronto\,--\,Tromsø Phonology Workshop, University of Toronto, Toronto, Canada}
-\yearblock{\textit{Russian vowel reduction without functional motivation}. Third Scandinavian PhD Conference in Linguistics and Philology. University of Bergen, Bergen, Norway}
-\yearblock{\textit{Cuique suum: vowel reduction in Russian}. Laboratory Phonology course workshop. University of  Tromsø, Tromsø, Norway}
-\yearblock[2008]{\textit{Fonetikk versus fonologi: den ubehagelige sannheten om vokalreduksjon i russisk}. In Norwegian: \enquote{Phonetics vs phonology: the inconvenient truth about Russian vowel reduction}. Novemberseminaret i russisk, University of Tromsø, Tromsø, Norway}
-\yearblock{\textit{Too many levels, too few solutions: mutations and postlexical phonology in Breton}. 16th Manchester Phonology Meeting, University of Manchester, Manchester, UK}
-\yearblock{\textit{All that glistens is not gold: against autosegmental approaches to initial consonant mutation}. GLOW 31 Colloquium, Newcastle University, Newcastle upon Tyne, UK}
-\yearblock{\textit{Liquids and spirants: a phonological perspective}. GLOW workshop on \enquote{Categorical phonology and gradient facts}, Newcastle University, Newcastle upon Tyne, UK}
-\yearblock{\textit{Against autosegmental approaches to initial consonant mutation}. CASTL Colloquium series, University of Tromsø, Tromsø, Norway}
-\yearblock{\textit{Initial consonant mutation and information flow in Mende}. Old World Conference in Phonology~5, University of Toulouse II -- Le Mirail,  Toulouse, France}
-\yearblock[2007]{\textitrussian{Лексикализованные вершины в валлийском синтаксисе}. In  Russian: \enquote{Lexicalized heads in Welsh syntax}. Syntactic Structures 1, Russian State University for the Humanities, Moscow, Russia}
-\yearblock{\textit{Phonological processes as lexical insertion: more  evidence from Welsh and elsewhere}. Old World Conference in Phonology~4, University of the Aegean, Rhodes, Greece}
-\yearblock[2006]{\textitrussian{Валлийский язык и типология мутаций начальных согласных}. In Russian: \enquote{Welsh and the typology of initial consonant  mutations}. Third Conference on Typology and Grammar for  Young Researchers, Institute of Linguistic Studies (Russian Academy of  Sciences), St.\ Petersburg, Russia}
-\yearblock{\textit{Brythonic \enquote{second lenition} revisited}. Second Colloquium of Societas Celto-Slavica, Moscow State University~\&{} Institute of Linguistics (Russian Academy of Sciences), Moscow, Russia}
-\yearblock{\textitrussian{Грамматикализация начальных чередований в валлийском языке: некоторые наблюдения}. In Russian: \enquote{Some observations  on the grammaticalization of Welsh initial consonant mutations}. Moscow  Student Conference in Linguistics, Moscow State University, Moscow, Russia}
-\yearblock{\textit{Right at the left edge: Initial consonant mutations in the  world's languages}. Rara~\& Rarissima: Collecting and interpreting unusual  characteristics of human languages, Max Planck Institute for Evolutionary  Anthropology, Leipzig, Germany}
-\yearblock[2005]{\textitrussian{К морфонологической типологии: «рерадикализация» в языках мира}. In Russian: \enquote{On morphophonological typology:  \enquote{reradicalization} in the world's languages}. Second Conference on Typology and Grammar for Young Researchers, Institute of  Linguistic Studies (Russian Academy of Sciences), St.\ Petersburg, Russia}
-\yearblock{(with A.~G.~Pazel'skaya, M.~A.~Tsyurupa) \textitrussian{Типологически значимые параметры глагольной лексики: имперфективирующие деривации ненецкого языка}. In Russian: \enquote{Typologically significant parameters in the verbal lexicon: imperfectivizing derivations in Nenets}. Given at the Fourth  International School in Linguistic Typology and Anthropology, Yerevan, Armenia}
+\newrefsection[presentations]
+\nocite{*}
+\printbibliography[heading=none]
 
 \section{Grants awarded}
 
@@ -239,8 +164,10 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{D
 \section{Teaching}
 
 \begin{multicols}{2}
-\yearblock[The University of Edinburgh]{Univariate Statistics and Methodology Using R (MSc)}
-\yearblock{Celtic, English, and Norse in Contact (Honours)}
+  \subsection{University of Edinburgh}
+\yearblock{Celtic Linguistics (Honours \&{} MSc)}
+\yearblock{Univariate Statistics and Methodology Using R (MSc)}
+\yearblock{Celtic, English, and Norse in Contact (Honours; discontinued)}
 \yearblock{Linguistics and the Gaelic Language (2nd year pre-Honours)}
 \yearblock{Historical Phonology (Honours \&{} MSc)}
 \yearblock{Current Issues in Phonology (Honours \&{} MSc)}
@@ -249,14 +176,23 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{D
 \yearblock{LEL2E Structure and History of European Languages (2nd year pre-Honours)}
 \yearblock{Gaelic Dialectology (Honours)}
 \yearblock{Honours Foundation: Phonology and Phonetics (Honours; discontinued)}
-\yearblock[University of Ulster]{Theoretical Approaches to the Phonetics and Phonology of English (MSc)}
+
+\subsection{University of Ulster}
+\label{sec:university-ulster}
+
+\yearblock{Theoretical Approaches to the Phonetics and Phonology of English (MSc)}
 \yearblock{Linguistics for Clinicians 2 (2nd year BSc)}
 \yearblock{Linguistic Analysis (1st year BSc)}
 \yearblock{Linguistic Theory (2nd year BSc)}
 \yearblock{Research Methods (2nd year BSc)}
 \yearblock{Current Issues in Linguistic Theory (3rd year BSc)}
 \yearblock{Critical Review (MSc)}
-\yearblock[University of Tromsø]{Historical Linguistics (BA)}
+
+\subsection{University of Tromsø}
+\label{sec:university-tromso}
+
+
+\yearblock{Historical Linguistics (BA)}
 \yearblock{\textit{Examen  facultatum} for the humanities (1st year BA)}
 \yearblock{Structures of  Russian (2nd year BA)}
 \yearblock{Language and  Literature of Medieval Russia (MA)}
@@ -265,13 +201,11 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{D
 
 \end{multicols}
 \section{Fieldwork experience}
-\begin{multicols}{2}
 \block{2016--}{Norwegian}
 \block{2014--}{Scottish Gaelic}
 \block{2014--}{Welsh}
 \block{2003--2004}{Tundra Nenets (Nel'min Nos, Nenets Autonomous District, Russian Federation. Part of  Moscow State University linguistic expedition)}
 
-\end{multicols}
 \section{PhD supervision}
 \label{sec:phd-supervision}
 
@@ -285,7 +219,6 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{D
 
 \section{Language skills}
 
-\begin{multicols}{2}
 \block{Russian}{Native}
 \block{English}{Proficient (IELTS General, overall band 8.5)}
 \block{Norwegian}{Advanced  (Test i norsk---høyere nivå, bokmål: 650/700), good structural knowledge, fieldwork experience}
@@ -300,7 +233,6 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{D
 \block{Breton}{Elementary, good structural knowledge}
 \block{Tundra Nenets}{Fieldwork experience}
 \block{Ancient}{Latin (fair knowledge), Middle Welsh (fair knowledge), Old Russian (fair knowledge), Old Irish, Sanskrit, Old Church Slavic}
-\end{multicols}
 
 
 \section{Other professional service}
@@ -337,7 +269,3 @@ The Edinburgh Symposium on Historical Phonology (local organizer)\\
 
 
 \end{document}
-
-% Local Variables:
-% TeX-engine: default
-% End:

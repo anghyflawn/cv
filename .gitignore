@@ -5,3 +5,11 @@
 *.el
 /cv.synctex.gz
 *.tex#
+*.bbl
+*.bcf
+*.blg
+/publist.pdf
+*.xml
+*.gz
+/inpreparation.bib
+/publist.tex

@@ -4,7 +4,7 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "a4paper" "11pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("typearea" "DIV=11") ("babel" "main=british" "russian") ("csquotes" "autostyle") ("xcolor" "usenames" "dvipsnames") ("inputenc" "utf8") ("fontenc" "T2A" "T1") ("cantarell" "defaultsans")))
+                     '(("geometry" "margin=2.54cm" "left=5cm" "marginparwidth=4.6cm" "marginparsep=3mm" "heightrounded") ("babel" "main=british" "russian") ("csquotes" "autostyle") ("xcolor" "usenames" "dvipsnames") ("inputenc" "utf8") ("fontenc" "T2A" "T1") ("cantarell" "defaultsans") ("biblatex" "bibstyle=publist" "marginyear=true" "plnumbered=false" "boldyear=false" "date=year" "maxbibnames=50" "autolang=hyphen" "sorting=ddnt")))
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
@@ -16,7 +16,7 @@
     "latex2e"
     "article"
     "art11"
-    "typearea"
+    "geometry"
     "parskip"
     "color"
     "graphicx"
@@ -36,7 +36,8 @@
     "tipa"
     "literat"
     "cantarell"
-    "newunicodechar")
+    "newunicodechar"
+    "biblatex")
    (TeX-add-symbols
     '("yearblock" ["argument"] 1)
     '("doi" 1)
@@ -45,11 +46,11 @@
     '("textitrussian" 1)
     '("textrussian" 1)
     '("ipa" 1)
-    "ipa")
+    "ipa"
+    "publistbasestyle")
    (LaTeX-add-labels
-    "sec:books"
-    "sec:edited-volumes"
-    "sec:misc-publ"
+    "sec:university-ulster"
+    "sec:university-tromso"
     "sec:phd-supervision")
    (LaTeX-add-lengths
     "blockwidth")
