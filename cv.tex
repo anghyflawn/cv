@@ -1,5 +1,5 @@
-\documentclass[a4paper,11pt]{article}
-\usepackage[margin=2.54cm,left=5cm, marginparwidth=4.6cm, marginparsep=3mm, heightrounded]{geometry}
+\documentclass[a4paper,12pt]{article}
+\usepackage[margin=2.54cm,left=4cm, marginparwidth=3.6cm, marginparsep=3mm, heightrounded]{geometry}
 \usepackage{parskip}
 \usepackage{color,graphicx}
 \usepackage{etex}
@@ -11,7 +11,8 @@
 \usepackage{multicol}
 \usepackage{etoolbox}
 \usepackage{hyperref}
-\hypersetup{colorlinks,breaklinks,urlcolor=blue,linkcolor=blue,pdftitle={Pavel Iosad CV}}
+\urlstyle{tt}
+\hypersetup{colorlinks,breaklinks=true,urlcolor=blue,linkcolor=blue,pdftitle={Pavel Iosad CV}}
 
 
 \newlength\blockwidth
@@ -24,10 +25,10 @@
 \ifluatex
 \usepackage{luatextra}
 \defaultfontfeatures{Ligatures=TeX}
-\setmainfont{Old Standard}
+\setmainfont{Brill}
 \setsansfont[Scale=MatchLowercase]{Arimo}
 \setmonofont[Scale=MatchLowercase]{Iosevka}
-\newfontfamily\ipafont[Scale=MatchLowercase]{EB Garamond}
+\newfontfamily\ipafont[Scale=MatchLowercase]{Brill}
 \DeclareTextFontCommand{\ipa}{\ipafont}
 \else
 \usepackage[utf8]{inputenc}
@@ -62,7 +63,7 @@
 \newcommand{\yearblock}[2][]{\ifblank{#1}{\cvitem{#2}}{\block{#1}{#2}}}
 
 
-\newcommand\doi[1]{\href{http://dx.doi.org/#1}{doi: #1}}
+\newcommand\doi[1]{\href{http://dx.doi.org/#1}{\textsc{doi}: \texttt{#1}}}
 
 \newcommand*{\publistbasestyle}{biblatex-langsci-unified}
 \usepackage[bibstyle=publist, marginyear=true, plnumbered=false, boldyear=false, date=year, maxbibnames=50, autolang=hyphen, sorting=ddnt]{biblatex}
