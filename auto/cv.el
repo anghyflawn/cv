@@ -4,7 +4,7 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "a4paper" "12pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("geometry" "margin=2.54cm" "left=4cm" "marginparwidth=3.6cm" "marginparsep=3mm" "heightrounded") ("babel" "main=british" "russian") ("csquotes" "autostyle") ("xcolor" "usenames" "dvipsnames") ("inputenc" "utf8") ("fontenc" "T2A" "T1") ("cantarell" "defaultsans") ("biblatex" "bibstyle=publist" "marginyear=true" "plnumbered=false" "boldyear=false" "date=year" "maxbibnames=50" "autolang=hyphen" "sorting=ddnt")))
+                     '(("geometry" "margin=2.54cm" "left=3.5cm" "marginparwidth=3.5cm" "marginparsep=3mm" "heightrounded") ("babel" "main=british" "russian") ("csquotes" "autostyle") ("xcolor" "usenames" "dvipsnames") ("inputenc" "utf8") ("fontenc" "T2A" "T1") ("cantarell" "defaultsans") ("biblatex" "bibstyle=publist" "marginyear=true" "plnumbered=false" "boldyear=false" "date=year" "maxbibnames=50" "autolang=hyphen" "sorting=ddnt")))
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
