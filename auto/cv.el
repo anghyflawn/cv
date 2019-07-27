@@ -21,6 +21,7 @@
     "color"
     "graphicx"
     "etex"
+    "textcomp"
     "babel"
     "csquotes"
     "xcolor"
@@ -29,6 +30,7 @@
     "multicol"
     "etoolbox"
     "hyperref"
+    "hyphenat"
     "ifluatex"
     "luatextra"
     "inputenc"
@@ -46,15 +48,12 @@
     '("textitrussian" 1)
     '("textrussian" 1)
     '("ipa" 1)
-    "ipa"
     "publistbasestyle")
    (LaTeX-add-labels
     "sec:university-ulster"
     "sec:university-tromso"
     "sec:phd-supervision")
    (LaTeX-add-lengths
-    "blockwidth")
-   (LaTeX-add-fontspec-newfontcmds
-    "ipafont"))
+    "blockwidth"))
  :latex)
 
