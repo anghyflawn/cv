@@ -3,6 +3,7 @@
 \usepackage{parskip}
 \usepackage{color,graphicx}
 \usepackage{etex}
+\usepackage{textcomp}
 \usepackage[main=british, russian]{babel}
 \usepackage[autostyle]{csquotes}
 \usepackage[usenames,dvipsnames]{xcolor}
@@ -11,6 +12,7 @@
 \usepackage{multicol}
 \usepackage{etoolbox}
 \usepackage{hyperref}
+\usepackage{hyphenat}
 \urlstyle{tt}
 \hypersetup{colorlinks,breaklinks=true,urlcolor=blue,linkcolor=blue,pdftitle={Pavel Iosad CV}}
 
@@ -25,11 +27,10 @@
 \ifluatex
 \usepackage{luatextra}
 \defaultfontfeatures{Ligatures=TeX}
-\setmainfont{Brill}
+\setmainfont{Minion 3}
 \setsansfont[Scale=MatchLowercase]{Arimo}
 \setmonofont[Scale=MatchLowercase]{Iosevka}
-\newfontfamily\ipafont[Scale=MatchLowercase]{Brill}
-\DeclareTextFontCommand{\ipa}{\ipafont}
+\providecommand\ipa[1]{#1}
 \else
 \usepackage[utf8]{inputenc}
 \usepackage[T2A,T1]{fontenc}
@@ -65,7 +66,7 @@
 
 \newcommand\doi[1]{\href{http://dx.doi.org/#1}{\textsc{doi}: \texttt{#1}}}
 
-\newcommand*{\publistbasestyle}{biblatex-langsci-unified}
+\newcommand*{\publistbasestyle}{langsci-unified}
 \usepackage[bibstyle=publist, marginyear=true, plnumbered=false, boldyear=false, date=year, maxbibnames=50, autolang=hyphen, sorting=ddnt]{biblatex}
 \plauthorname[Pavel]{Iosad}
 \begin{document}
@@ -116,10 +117,11 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{P
 \nocite{*}
 \printbibliography[heading=none]
 
-\subsection*{Journal articles}
 \newrefsection[journal-articles]
 \nocite{*}
-\printbibliography[heading=none]
+
+\subsection*{Journal articles}
+\printbibliography[heading=none, notkeyword=future]
 
 \subsection*{Papers in edited collections}
 \newrefsection[chapters]
@@ -129,7 +131,7 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{P
 \subsection*{Books edited}
 \newrefsection[edited-books]
 \nocite{*}
-\printbibliography[heading=none, notkeyword=future]
+\printbibliography[heading=none]
 
 
 \subsection*{Miscellaneous}
@@ -208,7 +210,7 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{P
 \section{PhD supervision}
 \label{sec:phd-supervision}
 
-\yearblock[2015--]{Jade Jørgen Sandstedt. \emph{Vowel harmony in Old Norwegian} (with Patrick Honeybone). Winner of the Philological Society's Robins Prize.}
+\yearblock[2015--2019]{Jade Jørgen Sandstedt. \emph{Feature specifications and contrast in vowel harmony: The orthography and phonology of Old Norwegian vowel harmony} (with Patrick Honeybone). Winner of the Philological Society's Robins Prize. Current post: postdoctoral researcher in Nordic linguistics, Humboldt-Universität zu Berlin.}
 \yearblock[2015--]{Christopher Lewin (Celtic \&{} Scottish Studies). \emph{The historical phonology of Manx} (with Will Lamb)}
 
 \section{Computer skills}
@@ -236,16 +238,16 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{P
 
 \section{Other professional service}
 
-\block{Editorial board membership}{Phonology (2017--present)\\
+\block{Editorial board membership}{Phonology (2017--present; Associate Editor from 2019)\\
   Papers in Historical Phonology (2016--present)\\
   Canadian Journal of Linguistics | Revue canadienne de linguistique (2016--present)\\
   \textrussian{Вопросы языкознания} | Voprosy jazykoznanija (2018--present)}
-\block{Reviewing}{Member of the AHRC Peer Review College (2015--2018)\\Journals (* indicates multiple reviews): \emph{Phonology}*, \emph{Glossa}*, \emph{Lingua}* (before 2016), \emph{Journal of Linguistics}*, \emph{Natural Language and Linguistic Theory}, \emph{Language}, \emph{Cognitive Linguistics}, \emph{Journal of the International Phonetic Association}*, \emph{Journal of Celtic Linguistics}, \emph{English Language \&{} Linguistics}, \emph{Heritage Language Journal}, \emph{Poznań Studies in Contemporary Linguistics}*, \emph{Linguistic Variation}, \emph{International Journal of American Linguistics}, \textitrussian{Вопросы языкознания}*, \emph{Nordlyd}, \emph{Acta Borealia}\\
+\block{Reviewing}{Member of the AHRC Peer Review College (2015--, renewed for second term)\\Journals (* indicates multiple reviews): \emph{Phonology}*, \emph{Glossa}*, \emph{Lingua}* (before 2016), \emph{Journal of Linguistics}*, \emph{Natural Language and Linguistic Theory}*, \emph{Language}, \emph{Cognitive Linguistics}, \emph{Journal of the International Phonetic Association}*, \emph{Journal of Celtic Linguistics}, \emph{English Language \&{} Linguistics},  \emph{Journal of Germanic Linguistics}, \emph{Heritage Language Journal}, \emph{Poznań Studies in Contemporary Linguistics}*, \emph{Linguistic Variation}, \emph{International Journal of American Linguistics}, \textitrussian{Вопросы языкознания}*, \emph{Nordlyd}, \emph{Acta Borealia}\\
 Abstracts: Moscow Student Conference in Linguistics, Old World Conference in Phonology, GLOW, International Congress of Linguists, NELS, Norwegian Graduate Student Conference in Linguistics and Philology\\
 Proceedings: \emph{Formal Description of Slavic Languages}, \emph{Going Romance}\\
 Papers in edited volumes: John Benjamins, Oxford University Press\\
 Grant proposals: NSF-AHRC joint programme\\
-Book manuscripts and proposals: Cambridge University Press*, Palgrave Macmillan, Routledge\\
+Book manuscripts and proposals: Cambridge University Press*, Palgrave Macmillan, Routledge*\\
 Other: LAGB Siewerska Prize competition entries}
 \block{Conference organization}{20th International Conference on English Historical Linguistics (member of organizing committee)\\
   4th Workshop on Sound Change, April 2017 (local organizer)\\
