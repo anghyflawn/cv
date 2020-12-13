@@ -15,7 +15,8 @@
 \usepackage{hyphenat}
 \urlstyle{tt}
 \hypersetup{colorlinks,breaklinks=true,urlcolor=blue,linkcolor=blue,pdftitle={Pavel Iosad CV}}
-
+\usepackage{newunicodechar}
+\usepackage[normalem]{ulem}
 
 \newlength\blockwidth
 \setlength\blockwidth{3em}
@@ -26,11 +27,14 @@
 \usepackage{ifluatex}
 \ifluatex
 \usepackage{luatextra}
-\defaultfontfeatures{Ligatures=TeX}
-\setmainfont{Minion 3}
-\setsansfont[Scale=MatchLowercase]{Arimo}
+\defaultfontfeatures{Ligatures=TeX, Numbers=OldStyle}
+\setmainfont{Academy}
+\setsansfont[Scale=MatchLowercase]{Iosevka Aile}
 \setmonofont[Scale=MatchLowercase]{Iosevka SS05}
 \providecommand\ipa[1]{#1}
+\newunicodechar{ɨ}{\sout{i}}
+\newunicodechar{ĭ}{\b{i}}
+\newunicodechar{ȳ}{\={y}}
 \else
 \usepackage[utf8]{inputenc}
 \usepackage[T2A,T1]{fontenc}
@@ -38,7 +42,6 @@
 \usepackage{literat}
 \usepackage[defaultsans]{cantarell}
 \newcommand\ipa[1]{\textipa{#1}}
-\usepackage{newunicodechar}
 \newunicodechar{ɨ}{1}
 \fi
 
@@ -66,7 +69,7 @@
 
 \newcommand\doi[1]{\href{http://dx.doi.org/#1}{\textsc{doi}: \texttt{#1}}}
 
-\newcommand*{\publistbasestyle}{langsci-unified}
+\newcommand*{\publistbasestyle}{unified}
 \usepackage[bibstyle=publist, marginyear=true, plnumbered=false, boldyear=false, date=year, maxbibnames=50, autolang=hyphen, sorting=ddnt]{biblatex}
 \plauthorname[Pavel]{Iosad}
 
@@ -76,6 +79,7 @@
   inrevision = {In revision},
   topresent = {To be presented}
 }
+\DeclareFieldFormat*[article]{journalsubtitle}{\mkbibemph{#1}}
 
 
 \begin{document}
@@ -89,8 +93,7 @@
 The University of Edinburgh\\
 Dugald Stewart Building\\
 3 Charles Street\\
-Edinburgh\\
-EH8 9AD\\
+Edinburgh EH8 9AD\\
 Scotland\\
 United Kingdom}
 \block{Phone}{+44 (0)131 650 3948 (work)\\
