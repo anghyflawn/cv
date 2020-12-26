@@ -67,7 +67,7 @@
 \newcommand{\yearblock}[2][]{\ifblank{#1}{\cvitem{#2}}{\block{#1}{#2}}}
 
 
-\newcommand\doi[1]{\href{http://dx.doi.org/#1}{\textsc{doi}: \texttt{#1}}}
+\newcommand\doi[1]{\href{https://doi.org/#1}{\textsc{[doi]}}}
 
 \newcommand*{\publistbasestyle}{unified}
 \usepackage[bibstyle=publist, marginyear=true, plnumbered=false, boldyear=false, date=year, maxbibnames=50, autolang=hyphen, sorting=ddnt]{biblatex}
@@ -81,6 +81,10 @@
 }
 \DeclareFieldFormat*[article]{journalsubtitle}{\mkbibemph{#1}}
 
+\DeclareFieldFormat{doi}{%
+  \ifhyperref
+    {\href{https://doi.org/#1}{\textsc{[doi]}}}
+    {\nolinkurl{https://doi.org/#1}}}
 
 \begin{document}
 \thispagestyle{plain}
@@ -156,9 +160,9 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{P
 \yearblock[2019]{Zimmermann, Eva. 2017. Morphological length and prosodically defective morphemes (Oxford Studies in Phonology and Phonetics 1). Oxford: Oxford University Press. \emph{Journal of Linguistics} 55(2), 467--471. \doi{10.1017/S0022226719000021}}
 \yearblock[2018]{Pater, Joe and John J.~McCarthy (eds.). 2016. \textit{Harmonic Grammar and Harmonic Serialism}. London: Continuum. \emph{Voprosy jazykoznanija}, 2018/1, 138--147. \doi{10.31857/S0373658X0003705-4}}
 \yearblock[2017]{Wmffre, Iwan. 2013. \textit{The qualities and origins of the Welsh vowel} \ipa{[ɨ]}. Berlin: Curach Bhán Publications. \textit{Celtica} 29: 315--326.}
-\yearblock[2013]{Samuels, Bridget. 2011. \textit{Phonological architecture: A biolinguistic perspective}. Oxford: OUP. \emph{Norsk lingvistisk tidsskrift} 31(2), 298--305. \href{http://ojs.novus.no/index.php/NLT/article/view/179}{Link}}
-\yearblock[2009]{\textrussian{Зализняк, А. А.} [Zaliznjak, A. A.] 2008. \textitrussian{Древнерусские энклитики} [Enclitics in Old Russian]. Moscow: Jazyki slavyanskoj kul'tury. \textit{Voprosy jazykoznanija}, 2009/5, 132--136 (in Russian). \href{http://issuesinlinguistics.ru/pubfiles/2009-5_132-136.pdf}{Link}}
-\yearblock[2005]{Mattissen, Johanna, 2003. \textit{Dependent-Head Synthesis in  Nivkh: A Contribution to a Typology of Polysynthesis}. Amsterdam: John Benjamins. \textit{Voprosy jazykoznanija}, 2005/2, 135--140 (in Russian). \href{http://issuesinlinguistics.ru/pubfiles/2005-2_135-140.pdf}{Link}}
+\yearblock[2013]{Samuels, Bridget. 2011. \textit{Phonological architecture: A biolinguistic perspective}. Oxford: OUP. \emph{Norsk lingvistisk tidsskrift} 31(2), 298--305. \href{http://ojs.novus.no/index.php/NLT/article/view/179}{\textsc{[link]}}}
+\yearblock[2009]{\textrussian{Зализняк, А. А.} [Zaliznjak, A. A.] 2008. \textitrussian{Древнерусские энклитики} [Enclitics in Old Russian]. Moscow: Jazyki slavyanskoj kul'tury. \textit{Voprosy jazykoznanija}, 2009/5, 132--136 (in Russian). \href{http://issuesinlinguistics.ru/pubfiles/2009-5_132-136.pdf}{\textsc{[link]}}}
+\yearblock[2005]{Mattissen, Johanna, 2003. \textit{Dependent-Head Synthesis in  Nivkh: A Contribution to a Typology of Polysynthesis}. Amsterdam: John Benjamins. \textit{Voprosy jazykoznanija}, 2005/2, 135--140 (in Russian). \href{http://issuesinlinguistics.ru/pubfiles/2005-2_135-140.pdf}{\textsc{[link]}}}
 
 \subsection*{Encyclopædic articles}
 \yearblock[Various years]{Articles for \textitrussian{Большая российская энциклопедия}:\\
@@ -259,7 +263,7 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{P
   Papers in Historical Phonology (2016--present)\\
   Canadian Journal of Linguistics | Revue canadienne de linguistique (2016--present)\\
   \textrussian{Вопросы языкознания} | Voprosy jazykoznanija (2018--present)}
-\block{Reviewing}{Member of the AHRC Peer Review College (2015--, renewed for second term)\\Journals (* indicates multiple reviews): \emph{Phonology}*, \emph{Glossa}*, \emph{Lingua}* (before 2016), \emph{Journal of Linguistics}*, \emph{Natural Language and Linguistic Theory}*, \emph{Language}, \emph{Cognitive Linguistics}, \emph{Journal of the International Phonetic Association}*, \emph{Journal of Celtic Linguistics}, \emph{English Language \&{} Linguistics}*,  \emph{Journal of Germanic Linguistics}, \emph{Heritage Language Journal}, \emph{Poznań Studies in Contemporary Linguistics}*, \emph{Linguistic Variation}, \emph{International Journal of American Linguistics}, \emph{Journal of French Language Studies}, \emph{Phonetica}, \textitrussian{Вопросы языкознания}*, \emph{Nordlyd}, \emph{Acta Borealia}\\
+\block{Reviewing}{Member of the AHRC Peer Review College (2015--, renewed for second term)\\Journals (* indicates multiple reviews): \emph{Phonology}*, \emph{Glossa}*, \emph{Lingua}* (before 2016), \emph{Journal of Linguistics}*, \emph{Natural Language and Linguistic Theory}*, \emph{Language}, \emph{Cognitive Linguistics}, \emph{Journal of the International Phonetic Association}*, \emph{Journal of Celtic Linguistics}, \emph{English Language \&{} Linguistics}*,  \emph{Journal of Germanic Linguistics}, \emph{Heritage Language Journal}, \emph{Poznań Studies in Contemporary Linguistics}*, \emph{Linguistic Variation}, \emph{International Journal of American Linguistics}, \emph{Journal of French Language Studies}, \emph{Phonetica}, \emph{Linguistique et Langues Africaines}, \textitrussian{Вопросы языкознания}*, \emph{Nordlyd}, \emph{Acta Borealia}\\
 Abstracts: Moscow Student Conference in Linguistics, Old World Conference in Phonology, GLOW*, International Congress of Linguists, NELS*, Norwegian Graduate Student Conference in Linguistics and Philology, SinFonIJa, Annual Meeting on Phonology*\\
 Proceedings: \emph{Formal Description of Slavic Languages}, \emph{Going Romance}\\
 Papers in edited volumes: John Benjamins, Oxford University Press\\
