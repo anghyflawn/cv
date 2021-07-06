@@ -14,7 +14,9 @@
 \usepackage{hyperref}
 \usepackage{hyphenat}
 \urlstyle{tt}
-\hypersetup{colorlinks,breaklinks=true,urlcolor=blue,linkcolor=blue,pdftitle={Pavel Iosad CV}}
+\usepackage{fontawesome}
+\usepackage{academicons}
+\hypersetup{colorlinks,breaklinks=true,urlcolor=Maroon,linkcolor=Maroon,pdftitle={Pavel Iosad CV}}
 \usepackage{newunicodechar}
 \usepackage[normalem]{ulem}
 
@@ -56,7 +58,7 @@
 \newcommand{\yearblock}[2][]{\ifblank{#1}{\cvitem{#2}}{\block{#1}{#2}}}
 
 
-\newcommand\doi[1]{\href{https://doi.org/#1}{\textsc{[doi]}}}
+\newcommand\doi[1]{\href{https://doi.org/#1}{\aiDoi}}
 
 \newcommand*{\publistbasestyle}{unified}
 \usepackage[bibstyle=publist, marginyear=true, plnumbered=false, boldyear=false, date=year, maxbibnames=50, autolang=hyphen, sorting=ddnt]{biblatex}
@@ -72,8 +74,9 @@
 
 \DeclareFieldFormat{doi}{%
   \ifhyperref
-    {\href{https://doi.org/#1}{\textsc{[doi]}}}
-    {\nolinkurl{https://doi.org/#1}}}
+  {\href{https://doi.org/#1}{\aiDoi\iffieldundef{oa}{}{~\aiOpenAccess}}}
+  {\nolinkurl{https://doi.org/#1}}}
+
 
 \begin{document}
 \thispagestyle{plain}
@@ -82,13 +85,24 @@
 \section{Contact details}
 
 
-\block{Postal address}{\addfontfeature{Numbers=Lining} Linguistics and English Language\\
+\block{Postal address}{\begin{minipage}[t]{.5\textwidth}\addfontfeature{Numbers=Lining} Linguistics and English Language\\
 The University of Edinburgh\\
 Dugald Stewart Building\\
 3 Charles Street\\
 Edinburgh EH8 9AD\\
 Scotland\\
-United Kingdom}
+United Kingdom
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.4\linewidth}
+  \begin{itemize}
+  \item[\aiOrcid] \href{http://orcid.org/0000-0002-9200-6682}{\ttfamily 0000-0002-9200-6682}
+  \item[\faTwitter] \href{https://twitter.com/anghyflawn}{@anghyflawn}
+  \item[\faGithub] \href{https://www.github.com/anghyflawn}{@anghyflawn}
+  \item[\aiGoogleScholar] \href{https://scholar.google.co.uk/citations?user=5V7WbM4AAAAJ}{Google Scholar}
+  \end{itemize}
+\end{minipage}
+}
 \block{Phone}{+44 (0)131 650 3948 (work)\\
 +44 (0)750 225 7061 (mobile)}
 \block{Email}{\href{mailto:pavel.iosad@ed.ac.uk}{pavel.iosad@ed.ac.uk}}
@@ -149,9 +163,9 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{P
 \yearblock[2019]{Zimmermann, Eva. 2017. Morphological length and prosodically defective morphemes (Oxford Studies in Phonology and Phonetics 1). Oxford: Oxford University Press. \emph{Journal of Linguistics} 55(2), 467--471. \doi{10.1017/S0022226719000021}}
 \yearblock[2018]{Pater, Joe and John J.~McCarthy (eds.). 2016. \textit{Harmonic Grammar and Harmonic Serialism}. London: Continuum. \emph{Voprosy jazykoznanija}, 2018/1, 138--147. \doi{10.31857/S0373658X0003705-4}}
 \yearblock[2017]{Wmffre, Iwan. 2013. \textit{The qualities and origins of the Welsh vowel} \ipa{[ɨ]}. Berlin: Curach Bhán Publications. \textit{Celtica} 29: 315--326.}
-\yearblock[2013]{Samuels, Bridget. 2011. \textit{Phonological architecture: A biolinguistic perspective}. Oxford: OUP. \emph{Norsk lingvistisk tidsskrift} 31(2), 298--305. \href{http://ojs.novus.no/index.php/NLT/article/view/179}{\textsc{[link]}}}
-\yearblock[2009]{\textrussian{Зализняк, А. А.} [Zaliznjak, A. A.] 2008. \textitrussian{Древнерусские энклитики} [Enclitics in Old Russian]. Moscow: Jazyki slavyanskoj kul'tury. \textit{Voprosy jazykoznanija}, 2009/5, 132--136 (in Russian). \href{http://issuesinlinguistics.ru/pubfiles/2009-5_132-136.pdf}{\textsc{[link]}}}
-\yearblock[2005]{Mattissen, Johanna, 2003. \textit{Dependent-Head Synthesis in  Nivkh: A Contribution to a Typology of Polysynthesis}. Amsterdam: John Benjamins. \textit{Voprosy jazykoznanija}, 2005/2, 135--140 (in Russian). \href{http://issuesinlinguistics.ru/pubfiles/2005-2_135-140.pdf}{\textsc{[link]}}}
+\yearblock[2013]{Samuels, Bridget. 2011. \textit{Phonological architecture: A biolinguistic perspective}. Oxford: OUP. \emph{Norsk lingvistisk tidsskrift} 31(2), 298--305. \href{http://ojs.novus.no/index.php/NLT/article/view/179}{\faLink}}
+\yearblock[2009]{\textrussian{Зализняк, А. А.} [Zaliznjak, A. A.] 2008. \textitrussian{Древнерусские энклитики} [Enclitics in Old Russian]. Moscow: Jazyki slavyanskoj kul'tury. \textit{Voprosy jazykoznanija}, 2009/5, 132--136 (in Russian). \href{http://issuesinlinguistics.ru/pubfiles/2009-5_132-136.pdf}{\faLink}}
+\yearblock[2005]{Mattissen, Johanna, 2003. \textit{Dependent-Head Synthesis in  Nivkh: A Contribution to a Typology of Polysynthesis}. Amsterdam: John Benjamins. \textit{Voprosy jazykoznanija}, 2005/2, 135--140 (in Russian). \href{http://issuesinlinguistics.ru/pubfiles/2005-2_135-140.pdf}{\faLink}}
 
 \subsection*{Encyclopædic articles}
 \yearblock[Various years]{Articles for \textitrussian{Большая российская энциклопедия}:\\
