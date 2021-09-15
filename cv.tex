@@ -28,7 +28,11 @@
 % FONTS
 \usepackage{luatextra}
 \defaultfontfeatures{Ligatures=TeX, Numbers=OldStyle}
-\setmainfont{Literaturnaya}
+\setmainfont{Bodoni PT Text}
+\newfontfamily\displayfont{Bodoni PT Subhead Demi}
+\newfontfamily\titlefont{Bodoni PT Display Bold}
+\newfontfamily\demiboldfont{Bodoni PT Text Demi}
+\DeclareTextFontCommand\textdemibold\demiboldfont
 \setsansfont[Scale=MatchLowercase]{Iosevka Aile}
 \setmonofont[Scale=MatchLowercase]{Iosevka SS01}
 \providecommand\ipa[1]{#1}
@@ -36,8 +40,8 @@
 \newunicodechar{ĭ}{i}
 \newunicodechar{ȳ}{y}
 
-\titleformat{\section}{\Large\sffamily\bfseries\raggedright}{}{0em}{}[\titlerule]
-\titleformat{\subsection}{\large\sffamily\bfseries\raggedright}{}{0em}{}
+\titleformat{\section}{\Large\displayfont\raggedright}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\large\displayfont\raggedright}{}{0em}{}
 \newcommand\textrussian[1]{\foreignlanguage{russian}{#1}}
 \newcommand\textitrussian[1]{\foreignlanguage{russian}{\textit{#1}}}
 \titleformat{\subsubsection}{\large}{}{0em}{}
@@ -64,6 +68,10 @@
 \usepackage[bibstyle=publist, marginyear=true, plnumbered=false, boldyear=false, date=year, maxbibnames=50, autolang=hyphen, sorting=ddnt]{biblatex}
 \plauthorname[Pavel]{Iosad}
 
+\renewcommand*\plmarginyear[1]{%
+\raggedleft\small\textdemibold{#1}%
+}
+
 \NewBibliographyString{inrevision}
 \NewBibliographyString{topresent}
 \DefineBibliographyStrings{english}{
@@ -79,8 +87,9 @@
 
 
 \begin{document}
+\hyphenation{A-lek-san-dro-vich Man-ches-ter Teang-eolaíocht mor-pho-phon-o-lo-gy}
 \thispagestyle{plain}
-{\Huge Pavel Iosad}\\[\baselineskip]
+{\titlefont\Huge Pavel Iosad}\\[\baselineskip]
 
 \section{Contact details}
 
@@ -236,7 +245,7 @@ Examiner: \href{http://www.philol.msu.ru/~ruslang/about/employee/knyazev.s.v/}{P
 \yearblock[2015--2020]{Christopher Lewin (Celtic \&{} Scottish Studies). \emph{Aspects of the historical phonology of Manx} (with Will Lamb). Examiners: Roibeard Ó~Maolalaigh, Warren Maguire. Winner of the Societas Celtologica Europaea's Kaspar Zeuss Prize for best PhD dissertation in Celtic Studies (2020). Current post: research assistant, Aberystwyth University.}
 \yearblock[2019--]{Jakub Musil. \emph{Vowel insertion in the Gaelic languages} (with Warren Maguire and Will Lamb)}
 \yearblock[2020--]{Riccardo Battilani. \emph{Vowel length in the Romance languages of northern Italy} (with Alice Turk)}
-
+\yearblock[2021--]{Anna Lawless. \emph{The morphology of Celtic initial consonant mutations} (with Peter Ackema)}
 \section{Computer skills}
 \block{General}{Linux, \LaTeX, HTML/CSS}
 \block{Programming}{Common Lisp, Python, R (fair knowledge); Haskell, JavaScript (some knowledge); C, SQL, Ruby (basic knowledge)}
