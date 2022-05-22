@@ -13,3 +13,6 @@
 *.gz
 /inpreparation.bib
 /publist.tex
+*.pandoc
+/publication-list.docx
+/hidden.bib
