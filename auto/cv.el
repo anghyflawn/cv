@@ -4,14 +4,14 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "a4paper" "12pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("geometry" "margin=2.54cm" "left=3.5cm" "marginparwidth=3.5cm" "marginparsep=3mm" "heightrounded") ("babel" "main=british" "russian") ("csquotes" "autostyle") ("xcolor" "usenames" "dvipsnames") ("ulem" "normalem") ("biblatex" "bibstyle=publist" "marginyear=true" "plnumbered=false" "boldyear=false" "date=year" "maxbibnames=50" "autolang=hyphen" "sorting=ddnt")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+                     '(("geometry" "margin=2.54cm" "left=3.5cm" "marginparwidth=3.5cm" "marginparsep=3mm" "heightrounded") ("babel" "main=british" "russian") ("csquotes" "autostyle") ("xcolor" "usenames" "dvipsnames") ("ulem" "normalem") ("biblatex" "bibstyle=publist" "marginyear=true" "plnumbered=false" "boldyear=false" "date=year" "maxbibnames=50" "autolang=hyphen" "sorting=ddnt" "issueandeditor=true")))
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -40,6 +40,7 @@
     "biblatex")
    (TeX-add-symbols
     '("yearblock" ["argument"] 1)
+    '("plmarginyear" 1)
     '("doi" 1)
     '("block" 2)
     '("cvitem" 1)
