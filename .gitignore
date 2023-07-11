@@ -16,3 +16,4 @@
 *.pandoc
 /publication-list.docx
 /hidden.bib
+*.bib#
