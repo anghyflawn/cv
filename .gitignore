@@ -17,3 +17,5 @@
 /publication-list.docx
 /hidden.bib
 *.bib#
+*.bpx
+/.DS_Store
